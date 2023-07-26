@@ -57,17 +57,16 @@ const Login = () => {
         const userRef = ref(db, "users" + auth.currentUser["uid"]);
         onValue(userRef, (snapshot) => {
           const userData = snapshot.val();
-          {
-            !userData &&
-              set(ref(db, "users" + userID), {
-                userID: userID,
-                username: userDetail.user.displayName,
-                email: userDetail.user.email,
-                createdAt: new Date().toISOString(),
-                questionTaken: 0,
-                correctAnswers: 0,
-              });
-          }
+
+          !userData &&
+            set(ref(db, "users" + userID), {
+              userID: userID,
+              username: userDetail.user.displayName,
+              email: userDetail.user.email,
+              createdAt: new Date().toISOString(),
+              questionTaken: 0,
+              correctAnswers: 0,
+            });
         });
 
         navigate("/");
