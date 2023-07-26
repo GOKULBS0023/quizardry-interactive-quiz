@@ -34,7 +34,7 @@ const User = () => {
       const userRef = ref(db, "users" + user["uid"]);
       onValue(userRef, (snapshot) => {
         const userData = snapshot.val();
-        setEmail(userData["email"]);
+        // setEmail(userData["email"]);
         setName(userData["username"]);
         setQuizTaken(userData["questionTaken"]);
         setCorrectAnswers(userData["correctAnswers"]);
