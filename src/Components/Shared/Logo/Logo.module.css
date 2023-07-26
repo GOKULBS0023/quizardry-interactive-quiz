@@ -1,0 +1,15 @@
+.logo {
+  letter-spacing: 1.5px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-family: "Handjet", cursive;
+  transition: all .3s;
+}
+.logo-spl {
+  font-size: 3.2rem;
+  color: #1478bb !important;
+}
+
+.logo:hover {
+  color: #1478bb !important;
+}

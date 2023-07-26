@@ -1,0 +1,21 @@
+.form{
+    display: grid;
+    grid-gap: 2rem;
+    margin-bottom: 2rem;
+}
+.auth__type{
+    font-size: 2rem;
+}
+.auth__change{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.link{
+    text-decoration: underline !important;
+    color: #1478bb !important;
+}
+.back__to-home{
+    font-size: 2rem;
+    transform: translateX(-5rem);
+    margin-bottom: 2rem;
+}

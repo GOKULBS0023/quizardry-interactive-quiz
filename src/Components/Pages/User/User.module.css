@@ -1,0 +1,43 @@
+.user__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  height: 100vh;
+}
+.user__profile {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 100px;
+  background-color: #1478bb;
+  display: grid;
+  place-items: center;
+  color: #f0f5f9;
+  font-size: 3.6rem;
+  cursor: pointer;
+}
+.user__auth-btn {
+  display: flex;
+  gap: 3rem;
+}
+.score__section {
+  display: grid;
+  grid-gap: 3rem;
+  text-align: center;
+}
+.username{
+    font-size: 2rem;
+}
+.quiz__score{
+    font-size: 3rem;
+}
+.quiz__score > *{
+    color: #1478bb;
+}
+.link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #1478bb !important;
+  text-decoration: underline !important;
+}

@@ -1,0 +1,20 @@
+.btn {
+  font-family: "Mulish";
+  padding: 1rem 2rem;
+  border: 1px solid #c9d6df;
+  background-color: #fff;
+  border-radius: 3px;
+  color: #1e2022;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #1478bb;
+  border: 1px solid #1478bb;
+  color: #f0f5f9;
+}
+@media only screen and (max-width: 500px) {
+  .btn {
+    padding: 0.9rem 1.5rem;
+  }
+}

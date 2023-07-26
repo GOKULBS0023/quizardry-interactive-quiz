@@ -1,0 +1,23 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 8rem;
+  border-bottom: 1px solid #C9D6DF;
+}
+.nav-list {
+  font-size: 1.6rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.nav-list:hover {
+  color: #1478bb;
+  transform: scale(1.1);
+}
+.active {
+  color: #1478bb !important;
+  transform: scale(1.1);
+}
+.nav-icon {
+  font-size: 2.4rem;
+}
