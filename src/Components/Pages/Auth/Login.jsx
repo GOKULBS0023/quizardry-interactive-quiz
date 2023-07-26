@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Styles from "./Auth.module.css";
 import InputBox from "../../Shared/Input/InputBox";
 import Button from "../../Shared/Button/Button";

@@ -13,7 +13,7 @@ import { faFaceFrownOpen } from "@fortawesome/free-regular-svg-icons";
 const User = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [quizTaken, setQuizTaken] = useState();
   const [correctAnswer, setCorrectAnswers] = useState();

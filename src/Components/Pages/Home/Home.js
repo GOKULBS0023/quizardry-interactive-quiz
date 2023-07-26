@@ -42,7 +42,7 @@ const Home = () => {
       };
       getScore();
     }
-  }, [quizData]);
+  }, [quizData, user]);
 
   useEffect(() => {
     if (user) {
@@ -62,7 +62,7 @@ const Home = () => {
       };
       setScore();
     }
-  }, [numberOfCorrect, numberOfQuestions]);
+  }, [numberOfCorrect, numberOfQuestions, username, email, createdAt, userId, user]);
   const handleDifficulty = (difficulty) => {
     setDifficultyLevel(difficulty);
   };
@@ -94,7 +94,7 @@ const Home = () => {
         `https://opentdb.com/api.php?amount=1&difficulty=${difficultyLevel}&category=${category}&type=multiple`
       );
     }
-  }, [category]);
+  }, [category, difficultyLevel]);
   const getNextQuestion = async () => {
     await axios
       .get(url)
