@@ -19,3 +19,8 @@
     transform: translateX(-5rem);
     margin-bottom: 2rem;
 }
+@media only screen and (max-width: 500px) {
+    .back__to-home{
+        transform: translateX(0);
+    }
+  }
