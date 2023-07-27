@@ -57,7 +57,6 @@ const Login = () => {
         const userRef = ref(db, "users" + auth.currentUser["uid"]);
         onValue(userRef, (snapshot) => {
           const userData = snapshot.val();
-
           !userData &&
             set(ref(db, "users" + userID), {
               userID: userID,
