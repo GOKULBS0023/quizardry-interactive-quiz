@@ -52,6 +52,7 @@ const Login = () => {
               createdAt: new Date().toISOString(),
               questionTaken: 0,
               correctAnswers: 0,
+              userHistory: [{}],
             });
         });
 
@@ -70,7 +71,7 @@ const Login = () => {
         </Link>
       </h2>
       <form onSubmit={handleLogin} className={Styles["form"]}>
-        <h2 className={Styles["auth__type"]}>Login with password</h2>
+        <h2 className={Styles["auth__type"]}>Login with email and password</h2>
         <InputBox
           htmlFor="emailId"
           value="Email ID"

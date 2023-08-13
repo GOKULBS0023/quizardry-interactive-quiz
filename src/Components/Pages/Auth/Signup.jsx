@@ -33,6 +33,7 @@ const Login = () => {
           createdAt: new Date().toISOString(),
           questionTaken: 0,
           correctAnswers: 0,
+          userHistory: [],
         });
         navigate("/home");
       })
@@ -65,6 +66,7 @@ const Login = () => {
               createdAt: new Date().toISOString(),
               questionTaken: 0,
               correctAnswers: 0,
+              userHistory: [{}],
             });
         });
 
@@ -84,7 +86,7 @@ const Login = () => {
       </h2>
 
       <form onSubmit={handleSignupSubmit} className={Styles["form"]}>
-        <h2 className={Styles["auth__type"]}>Signup with password</h2>
+        <h2 className={Styles["auth__type"]}>Signup with email and password</h2>
         <InputBox
           htmlFor="name"
           value="Name"

@@ -19,12 +19,14 @@ const Home = () => {
   const [createdAt, setCreatedAt] = useState();
   const [email, setEmail] = useState();
   const [quizData, setQuizData] = useState();
+  console.log(quizData);
   const [question, setQuestion] = useState();
   const [options, setOptions] = useState();
   const [answer, setAnswer] = useState();
   const [userAnswer, setUserAnswer] = useState();
   const [numberOfQuestions, setNumberOfQuestion] = useState(0);
   const [numberOfCorrect, setNumberOfCorrect] = useState(0);
+  const [userHistory, setUserHistory] = useState([]);
   const user = useContext(AuthContext);
   useEffect(() => {
     if (user) {
@@ -38,6 +40,7 @@ const Home = () => {
           setUsername(userData.username);
           setUserId(userData.userID);
           setCreatedAt(userData.createdAt);
+          setUserHistory(userData.userHistory);
         });
       };
       getScore();
@@ -49,20 +52,49 @@ const Home = () => {
       const userRef = ref(db, "users" + user?.uid);
       const setScore = async () => {
         if (username && email && createdAt && userId) {
-          const userDetails = {
-            username: username,
-            email: email,
-            createdAt: createdAt,
-            userID: userId,
-            correctAnswers: numberOfCorrect,
-            questionTaken: numberOfQuestions,
-          };
-          await set(userRef, userDetails);
+          if (userHistory?.length > 0) {
+            const userDetails = {
+              username: username,
+              email: email,
+              createdAt: createdAt,
+              userID: userId,
+              correctAnswers: numberOfCorrect,
+              questionTaken: numberOfQuestions,
+              userHistory: [
+                ...userHistory,
+                {
+                  question: question,
+                  answer: answer,
+                  options: options,
+                  entry: userAnswer,
+                },
+              ],
+            };
+            await set(userRef, userDetails);
+          } else {
+            const userDetails = {
+              username: username,
+              email: email,
+              createdAt: createdAt,
+              userID: userId,
+              correctAnswers: numberOfCorrect,
+              questionTaken: numberOfQuestions,
+              userHistory: [
+                {
+                  question: question,
+                  answer: answer,
+                  options: options,
+                  entry: userAnswer,
+                },
+              ],
+            };
+            await set(userRef, userDetails);
+          }
         }
       };
       setScore();
     }
-  }, [numberOfCorrect, numberOfQuestions, username, email, createdAt, userId, user]);
+  }, [userAnswer]);
   const handleDifficulty = (difficulty) => {
     setDifficultyLevel(difficulty);
   };

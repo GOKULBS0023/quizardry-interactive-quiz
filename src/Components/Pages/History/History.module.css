@@ -1,0 +1,36 @@
+.main {
+  width: 50vw;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.quiz__section {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #c9d6df;
+  padding: 3rem 4rem 4rem;
+  gap: 3rem;
+  border-radius: 3px;
+}
+
+.question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+  }
+  .options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4rem;
+    grid-gap: 3rem;
+  }
+.btn{
+    display: inline-block;
+    background-color: #1478bb;
+    border: 1px solid #1478bb;
+    color: #F0F5F9;
+    border-radius: 3px;
+}
